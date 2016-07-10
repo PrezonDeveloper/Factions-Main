@@ -1,0 +1,10 @@
+name: TheFactions
+version: 1.0.0
+author: ducitymp, PrezonDeveloper
+main: com.ducitymp.Factions.Factions
+softdepend: [HolographicDisplays]
+depend: [Factions]
+commands:
+  shards:
+  kits:
+  givekit:
