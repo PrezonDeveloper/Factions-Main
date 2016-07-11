@@ -1,6 +1,6 @@
 package com.ducitymp.Factions.Commands;
 
-import org.bukkit.ChatColor;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -19,31 +19,92 @@ public class CMD_givekit implements CommandExecutor{
 			if(args.length == 1){
 				if(args[0].equalsIgnoreCase("starter")){
 					kit.giveStarter(p);
-					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit starter <&d&l<&5&l<"));
+					
 				}else if(args[0].equalsIgnoreCase("hero")){
 					kit.giveHero(p);
-					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit hero <&d&l<&5&l<"));
+					
 				}else if(args[0].equalsIgnoreCase("god")){
 					kit.giveGod(p);
-					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit god <&d&l<&5&l<"));
+					
 				}else if(args[0].equalsIgnoreCase("elite")){
 					kit.giveElite(p);
-					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit elite <&d&l<&5&l<"));
 				}else if(args[0].equalsIgnoreCase("lord")){
 					kit.giveLord(p);
-					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit lord <&d&l<&5&l<"));
-				}else if(args[0].equalsIgnoreCase("overlord")){
+					}else if(args[0].equalsIgnoreCase("overlord")){
 					kit.giveOverLord(p);
-					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit overlord <&d&l<&5&l<"));
+					
 				}else if(args[0].equalsIgnoreCase("overkill")){
 					kit.giveOverkill(p);
-					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit overkill <&d&l<&5&l<"));
+					
 				}else{
 					sender.sendMessage("§c§lInvalid kit.");
 					return true;
 				}
+			}else if(args.length == 2){
+				
+				if(args[0].equalsIgnoreCase("starter")){
+					Player target = Bukkit.getPlayer(args[1]);
+					if(target == null){
+						sender.sendMessage("§c§lPlayer is not online.");
+						return true;
+					}
+					
+					kit.giveStarter(target);
+				}else if(args[0].equalsIgnoreCase("hero")){
+					Player target = Bukkit.getPlayer(args[1]);
+					if(target == null){
+						sender.sendMessage("§c§lPlayer is not online.");
+						return true;
+					}
+					
+					kit.giveHero(target);
+				}else if(args[0].equalsIgnoreCase("god")){
+					Player target = Bukkit.getPlayer(args[1]);
+					if(target == null){
+						sender.sendMessage("§c§lPlayer is not online.");
+						return true;
+					}
+					
+					kit.giveGod(target);
+					}else if(args[0].equalsIgnoreCase("elite")){
+					Player target = Bukkit.getPlayer(args[1]);
+					if(target == null){
+						sender.sendMessage("§c§lPlayer is not online.");
+						return true;
+					}
+					
+					kit.giveElite(target);
+					}else if(args[0].equalsIgnoreCase("lord")){
+					Player target = Bukkit.getPlayer(args[1]);
+					if(target == null){
+						sender.sendMessage("§c§lPlayer is not online.");
+						return true;
+					}
+					
+					kit.giveLord(target);
+				}else if(args[0].equalsIgnoreCase("overlord")){
+					Player target = Bukkit.getPlayer(args[1]);
+					if(target == null){
+						sender.sendMessage("§c§lPlayer is not online.");
+						return true;
+					}
+					
+					kit.giveOverLord(p);
+					}else if(args[0].equalsIgnoreCase("overkill")){
+					Player target = Bukkit.getPlayer(args[1]);
+					if(target == null){
+						sender.sendMessage("§c§lPlayer is not online.");
+						return true;
+					}
+					
+					kit.giveOverkill(target);
+					}else{
+					sender.sendMessage("§c§lInvalid kit.");
+					return true;
+				}
+				
 			}else{
-				p.sendMessage("§4§lUsage: §c§l/givekit (kit)");
+				p.sendMessage("§4§lUsage: §c§l/givekit [kit] (player)");
 				return true;
 			}
 		}

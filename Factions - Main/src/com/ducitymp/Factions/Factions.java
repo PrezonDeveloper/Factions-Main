@@ -65,6 +65,9 @@ public class Factions extends JavaPlugin{
       }
     }, 0, 20*60);
 	
+	// petervisjes@outlook.com
+	// Breakdance91q	
+	
     getServer().getPluginManager().registerEvents(new EntityInteract(), getInstance());
     getServer().getPluginManager().registerEvents(new EntityDamage(), getInstance());
     getServer().getPluginManager().registerEvents(new BlockInteract(), getInstance());

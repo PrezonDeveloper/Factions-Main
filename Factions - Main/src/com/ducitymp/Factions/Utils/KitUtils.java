@@ -1,5 +1,6 @@
 package com.ducitymp.Factions.Utils;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -30,6 +31,7 @@ public class KitUtils {
 		
 		p.getInventory().addItem(ItemUtils.item(Material.GOLDEN_APPLE, "&6&lGappel", null, 10, 1));
 		p.getInventory().addItem(ItemUtils.item(Material.COOKED_CHICKEN, "&8Chicken", null, 64, 0));
+		p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit starter <&d&l<&5&l<"));
 	    }else if(Factions.sql.getKITDELAY(p, "STARTER") == 0){
 	    	p.getInventory().addItem(ItemUtils.kitenchanteditem(Material.DIAMOND_HELMET, "&8Starter Helmet", null, 1, Enchantment.DURABILITY, 20, Enchantment.PROTECTION_ENVIRONMENTAL, 20));
 			p.getInventory().addItem(ItemUtils.kitenchanteditem(Material.DIAMOND_CHESTPLATE, "&8Starter Chestplate", null, 1, Enchantment.DURABILITY, 20, Enchantment.PROTECTION_ENVIRONMENTAL, 20));
@@ -42,6 +44,7 @@ public class KitUtils {
 			
 			p.getInventory().addItem(ItemUtils.item(Material.GOLDEN_APPLE, "&6&lGappel", null, 10, 1));
 			p.getInventory().addItem(ItemUtils.item(Material.COOKED_CHICKEN, "&8Chicken", null, 64, 0));
+			p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit starter <&d&l<&5&l<"));
 	        Factions.sql.setKITDELAY(p, 86400, "STARTER");
 	        delay.start(p);
 	    }else{
@@ -68,6 +71,7 @@ public class KitUtils {
 			
 			p.getInventory().addItem(ItemUtils.item(Material.GOLDEN_APPLE, "&6&lGappel", null, 20, 1));
 			p.getInventory().addItem(ItemUtils.item(Material.COOKED_CHICKEN, "&8Chicken", null, 64, 0));
+			p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit hero <&d&l<&5&l<"));
 		    }else if(Factions.sql.getKITDELAY(p, "HERO") == 0){
 		    	p.getInventory().addItem(ItemUtils.kitenchanteditem(Material.DIAMOND_HELMET, "&6&lHero Helmet", null, 1, Enchantment.DURABILITY, 40, Enchantment.PROTECTION_ENVIRONMENTAL, 40));
 				p.getInventory().addItem(ItemUtils.kitenchanteditem(Material.DIAMOND_CHESTPLATE, "&6&lHero Chestplate", null, 1, Enchantment.DURABILITY, 40, Enchantment.PROTECTION_ENVIRONMENTAL, 40));
@@ -80,7 +84,8 @@ public class KitUtils {
 				
 				p.getInventory().addItem(ItemUtils.item(Material.GOLDEN_APPLE, "&6&lGappel", null, 20, 1));
 				p.getInventory().addItem(ItemUtils.item(Material.COOKED_CHICKEN, "&8Chicken", null, 64, 0));
-		        Factions.sql.setKITDELAY(p, 86400, "HERO");
+				p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit hero <&d&l<&5&l<"));
+				Factions.sql.setKITDELAY(p, 86400, "HERO");
 		        delay.start(p);
 		    }else{
 		    	p.sendMessage("§c§lYou can't use this now. Wait time is §4§l" + Factions.sql.getKITDELAY(p, "HERO") + " §c§lseconds.");
@@ -106,6 +111,7 @@ public class KitUtils {
 			
 			p.getInventory().addItem(ItemUtils.item(Material.GOLDEN_APPLE, "&6&lGappel", null, 30, 1));
 			p.getInventory().addItem(ItemUtils.item(Material.COOKED_CHICKEN, "&8Chicken", null, 64, 0));
+			p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit elite <&d&l<&5&l<"));
 		    }else if(Factions.sql.getKITDELAY(p, "ELITE") == 0){
 		    	p.getInventory().addItem(ItemUtils.kitenchanteditem(Material.DIAMOND_HELMET, "&2&lElite Helmet", null, 1, Enchantment.DURABILITY, 60, Enchantment.PROTECTION_ENVIRONMENTAL, 60));
 				p.getInventory().addItem(ItemUtils.kitenchanteditem(Material.DIAMOND_CHESTPLATE, "&2&lElite Chestplate", null, 1, Enchantment.DURABILITY, 60, Enchantment.PROTECTION_ENVIRONMENTAL, 60));
@@ -118,6 +124,7 @@ public class KitUtils {
 				
 				p.getInventory().addItem(ItemUtils.item(Material.GOLDEN_APPLE, "&6&lGappel", null, 30, 1));
 				p.getInventory().addItem(ItemUtils.item(Material.COOKED_CHICKEN, "&8Chicken", null, 64, 0));
+				p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit elite <&d&l<&5&l<"));
 		        Factions.sql.setKITDELAY(p, 86400, "ELITE");
 		        delay.start(p);
 		    }else{
@@ -144,6 +151,7 @@ public class KitUtils {
 			
 			p.getInventory().addItem(ItemUtils.item(Material.GOLDEN_APPLE, "&6&lGappel", null, 40, 1));
 			p.getInventory().addItem(ItemUtils.item(Material.COOKED_CHICKEN, "&8Chicken", null, 64, 0));
+			p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit god <&d&l<&5&l<"));
 		    }else if(Factions.sql.getKITDELAY(p, "GOD") == 0){
 		    	p.getInventory().addItem(ItemUtils.kitenchanteditem(Material.DIAMOND_HELMET, "&d&lGod Helmet", null, 1, Enchantment.DURABILITY, 80, Enchantment.PROTECTION_ENVIRONMENTAL, 80));
 				p.getInventory().addItem(ItemUtils.kitenchanteditem(Material.DIAMOND_CHESTPLATE, "&d&lGod Chestplate", null, 1, Enchantment.DURABILITY, 80, Enchantment.PROTECTION_ENVIRONMENTAL, 80));
@@ -156,6 +164,7 @@ public class KitUtils {
 				
 				p.getInventory().addItem(ItemUtils.item(Material.GOLDEN_APPLE, "&6&lGappel", null, 40, 1));
 				p.getInventory().addItem(ItemUtils.item(Material.COOKED_CHICKEN, "&8Chicken", null, 64, 0));
+				p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit god <&d&l<&5&l<"));
 		        Factions.sql.setKITDELAY(p, 86400, "GOD");
 		        delay.start(p);
 		    }else{
@@ -183,6 +192,7 @@ public class KitUtils {
 			
 			p.getInventory().addItem(ItemUtils.item(Material.GOLDEN_APPLE, "&6&lGappel", null, 50, 1));
 			p.getInventory().addItem(ItemUtils.item(Material.COOKED_CHICKEN, "&8Chicken", null, 64, 0));
+			p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit lord <&d&l<&5&l<"));
 		    }else if(Factions.sql.getKITDELAY(p, "LORD") == 0){
 		    	p.getInventory().addItem(ItemUtils.kitenchanteditem(Material.DIAMOND_HELMET, "&4&lLord Helmet", null, 1, Enchantment.DURABILITY, 100, Enchantment.PROTECTION_ENVIRONMENTAL, 100));
 				p.getInventory().addItem(ItemUtils.kitenchanteditem(Material.DIAMOND_CHESTPLATE, "&4&lLord Chestplate", null, 1, Enchantment.DURABILITY, 100, Enchantment.PROTECTION_ENVIRONMENTAL, 100));
@@ -195,6 +205,7 @@ public class KitUtils {
 				
 				p.getInventory().addItem(ItemUtils.item(Material.GOLDEN_APPLE, "&6&lGappel", null, 50, 1));
 				p.getInventory().addItem(ItemUtils.item(Material.COOKED_CHICKEN, "&8Chicken", null, 64, 0));
+				p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit lord <&d&l<&5&l<"));
 		        Factions.sql.setKITDELAY(p, 86400, "LORD");
 		        delay.start(p);
 		    }else{
@@ -222,6 +233,7 @@ public class KitUtils {
 			
 			p.getInventory().addItem(ItemUtils.item(Material.GOLDEN_APPLE, "&6&lGappel", null, 60, 1));
 			p.getInventory().addItem(ItemUtils.item(Material.COOKED_CHICKEN, "&8Chicken", null, 64, 0));
+			p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit overlord <&d&l<&5&l<"));
 		    }else if(Factions.sql.getKITDELAY(p, "OVERLORD") == 0){
 		    	p.getInventory().addItem(ItemUtils.kitenchanteditem(Material.DIAMOND_HELMET, "&6&lOver&4&lLord Helmet", null, 1, Enchantment.DURABILITY, 120, Enchantment.PROTECTION_ENVIRONMENTAL, 120));
 				p.getInventory().addItem(ItemUtils.kitenchanteditem(Material.DIAMOND_CHESTPLATE, "&6&lOver&4&lLord Chestplate", null, 1, Enchantment.DURABILITY, 120, Enchantment.PROTECTION_ENVIRONMENTAL, 120));
@@ -234,6 +246,7 @@ public class KitUtils {
 				
 				p.getInventory().addItem(ItemUtils.item(Material.GOLDEN_APPLE, "&6&lGappel", null, 60, 1));
 				p.getInventory().addItem(ItemUtils.item(Material.COOKED_CHICKEN, "&8Chicken", null, 64, 0));
+				p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit overlord <&d&l<&5&l<"));
 		        Factions.sql.setKITDELAY(p, 86400, "OVERLORD");
 		        delay.start(p);
 		    }else{
@@ -261,6 +274,7 @@ public class KitUtils {
 			
 			p.getInventory().addItem(ItemUtils.item(Material.GOLDEN_APPLE, "&6&lGappel", null, 70, 1));
 			p.getInventory().addItem(ItemUtils.item(Material.COOKED_CHICKEN, "&8Chicken", null, 64, 0));
+			p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit overkill <&d&l<&5&l<"));
 		    }else if(Factions.sql.getKITDELAY(p, "OVERKILL") == 0){
 		    	p.getInventory().addItem(ItemUtils.kitenchanteditem(Material.DIAMOND_HELMET, "&5&lOverkill Helmet", null, 1, Enchantment.DURABILITY, 140, Enchantment.PROTECTION_ENVIRONMENTAL, 140));
 				p.getInventory().addItem(ItemUtils.kitenchanteditem(Material.DIAMOND_CHESTPLATE, "&5&lOverkill Chestplate", null, 1, Enchantment.DURABILITY, 140, Enchantment.PROTECTION_ENVIRONMENTAL, 140));
@@ -273,6 +287,7 @@ public class KitUtils {
 				
 				p.getInventory().addItem(ItemUtils.item(Material.GOLDEN_APPLE, "&6&lGappel", null, 70, 1));
 				p.getInventory().addItem(ItemUtils.item(Material.COOKED_CHICKEN, "&8Chicken", null, 64, 0));
+				p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&5&l>&d&l>&f&l> Recieved kit overkill <&d&l<&5&l<"));
 		        Factions.sql.setKITDELAY(p, 86400, "OVERKILL");
 		        delay.start(p);
 		    }else{
