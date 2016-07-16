@@ -19,6 +19,7 @@ public class Join implements Listener{
 	Scoreboard board = Bukkit.getScoreboardManager().getMainScoreboard();
     Team team = null;
 	
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onJoin(PlayerJoinEvent e){
 		Player p = (Player) e.getPlayer();
@@ -39,7 +40,7 @@ public class Join implements Listener{
 		e.setJoinMessage("&8«&a+&8» &a".replace("&", "§") + p.getName().replace("&", "§"));
 		p.sendMessage("&8&l&m--------------&5&l GravityCraft &8&l&m--------------".replace("&", "§"));
 		p.sendMessage(" ");
-		p.sendMessage("   &7Welcome &5&l".replace("&", "§") + p.getName() + " &7to &5&lGravityCraft&7!".replace("&", "§"));
+		p.sendMessage("              &7Welcome &5&l".replace("&", "§") + p.getName() + " &7to &5&lGravityCraft&7!".replace("&", "§"));
 		p.sendMessage(" ");
 		p.sendMessage("                   &7There are [&5&l".replace("&", "§") + Bukkit.getServer().getOnlinePlayers().size() + "&7] players online!".replace("&", "§"));
 		p.sendMessage(" ");

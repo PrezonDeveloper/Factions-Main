@@ -43,12 +43,12 @@ public class SQLSettings {
 			ResultSet rs = this.mysql
 					.Query("SELECT username FROM PlayerData WHERE username='" + p.getName() + "' LIMIT 1");
 			if (rs.next()) {
-				PlayerDataExist = true;
+				KitExist = true;
 			}
 		} catch (Exception err) {
 			System.err.println(err);
 		}
-		if (!PlayerDataExist) {
+		if (!KitExist) {
 			this.mysql
 					.Update("INSERT INTO PlayerData(username,COINS,KEY_Vote,KEY_Normal,KEY_Gold,KEY_Unique,KEY_Ultimate,SHARDS) values ('"
 							+ p.getName() + "','" + 0 + "','" + 0 + "','" + 0 + "','" + 0 + "','" + 0 + "','" + 0 + "','" + 0 + "')");
