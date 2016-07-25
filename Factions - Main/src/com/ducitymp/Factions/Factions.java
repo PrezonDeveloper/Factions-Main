@@ -12,7 +12,9 @@ import com.ducitymp.Factions.Commands.CMD_Shards;
 import com.ducitymp.Factions.Commands.CMD_auction;
 import com.ducitymp.Factions.Commands.CMD_givekit;
 import com.ducitymp.Factions.Commands.CMD_kits;
+import com.ducitymp.Factions.Commands.CMD_pay;
 import com.ducitymp.Factions.Listeners.BlockInteract;
+import com.ducitymp.Factions.Listeners.ChatListener;
 import com.ducitymp.Factions.Listeners.CommandBlocker;
 import com.ducitymp.Factions.Listeners.EntityDamage;
 import com.ducitymp.Factions.Listeners.EntityInteract;
@@ -76,11 +78,13 @@ public class Factions extends JavaPlugin{
     getServer().getPluginManager().registerEvents(new ShardsInteract(), getInstance());
     getServer().getPluginManager().registerEvents(new RandomCrate(), getInstance());
     getServer().getPluginManager().registerEvents(new CommandBlocker(), getInstance());
+    getServer().getPluginManager().registerEvents(new ChatListener(), getInstance());
     
     getCommand("shards").setExecutor(new CMD_Shards());
     getCommand("kits").setExecutor(new CMD_kits());
     getCommand("givekit").setExecutor(new CMD_givekit());
     getCommand("auction").setExecutor(new CMD_auction());
+    getCommand("pay").setExecutor(new CMD_pay());
     
     if (!Bukkit.getPluginManager().isPluginEnabled("HolographicDisplays")) {
     	getLogger().severe("*** HolographicDisplays is not installed or not enabled. ***");

@@ -11,6 +11,7 @@ import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
 
 import com.ducitymp.Factions.Fancifull.FancyMessage;
+import com.ducitymp.Factions.Utils.PacketUtils;
 
 import ru.tehkode.permissions.bukkit.PermissionsEx;
 
@@ -37,6 +38,7 @@ public class Join implements Listener{
 	@EventHandler
 	public void onJoin2(PlayerJoinEvent e){
 		Player p = (Player) e.getPlayer();
+		PacketUtils.sendTabHF(p, "§5§lGravityCraft §8§l• §f§lFACTIONS", "§fCheck our shop: §5shop.gravitycraft.eu§f!");
 		e.setJoinMessage("&8«&a+&8» &a".replace("&", "§") + p.getName().replace("&", "§"));
 		p.sendMessage("&8&l&m--------------&5&l GravityCraft &8&l&m--------------".replace("&", "§"));
 		p.sendMessage(" ");

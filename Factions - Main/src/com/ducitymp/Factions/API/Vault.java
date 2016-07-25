@@ -29,6 +29,15 @@ public static int doubleToInt(Double d)
 	return d.intValue();
     }
 
+public static boolean isInt(String s) {
+    try {
+        Integer.parseInt(s);
+    } catch (NumberFormatException nfe) {
+        return false;
+    }
+    return true;
+}
+
 public static int getMoney(Player p)
 {
   if (Vault.econ != null)
